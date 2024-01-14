@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage ('sonarqube scan'){
             steps {
-                sh '.github/workflows/build.yml'
+                sh 'mvn sonar:sonar'
             }
         }
         stage ('maven commands'){
