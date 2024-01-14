@@ -6,7 +6,9 @@ pipeline {
     stages{
         stage ('sonarqube scan'){
             steps {
+                withSonarQubeEnv('sonarserver'){
                 sh 'mvn sonar:sonar'
+            }
             }
         }
         stage ('maven commands'){
